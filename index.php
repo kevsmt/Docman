@@ -1,10 +1,10 @@
 <?php
-define('ALLOW_ADMIN_IP', '127.0.0.1');
+	define('ALLOW_ADMIN_IP', '127.0.0.1');
 
-if ($_SERVER['REMOTE_ADDR'] === ALLOW_ADMIN_IP)
-	$show_options = TRUE;
-else
-	$show_options = FALSE;
+	if ($_SERVER['REMOTE_ADDR'] === ALLOW_ADMIN_IP)
+		$show_options = TRUE;
+	else
+		$show_options = FALSE;
 ?>
 <!DOCTYPE html>
 <html>
@@ -29,9 +29,10 @@ else
 		<script type="text/javascript" src="lib/vendor/proper.js"></script>
 	</head>
 	<body>
-
 		<div id="header">
-			<p>Application Docs v2.0.0</p>
+			<p>
+				Application Docs v2.0.0
+			</p>
 			<div id="subheader">
 				<div class="float-left">
 					<h1 class="logo">Users Manual</h1>
@@ -39,24 +40,23 @@ else
 				<div class="float-right">
 					<div id="spin-container"></div>
 					<input name="s" type="text" id="search-field" class="float-left">
-					<button class="button tangerine" id="search-button">Search</button>
+					<button class="button tangerine" id="search-button">
+						Search
+					</button>
 				</div>
 				<div class="float-reset"></div>
 			</div>
 		</div>
-
 		<div id="sidebar"></div>
-		<?php if ($show_options === TRUE): ?>
-			<ul id="docman-options"></ul>
-		<?php endif; ?>
+		<?php if ($show_options === TRUE):
+		?>
+		<ul id="docman-options"></ul>
+		<?php endif;?>
 
 		<div id="scrollable">
-			<div id="content" class="smooth <?php if ($show_options === TRUE)
-			echo "admin-enabled"; ?>"></div>
+			<div id="content" class="smooth <?=($show_options === TRUE) ? "admin-enabled" : "";?>"></div>
 		</div>
-
 	</body>
-
 	<!-- Docman -->
 	<script type="text/javascript" src="lib/docman/Docman.js"></script>
 	<script type="text/javascript" src="lib/docman/router/App.js"></script>
@@ -68,12 +68,16 @@ else
 	<script type="text/javascript" src="lib/docman/view/Sidebar.js"></script>
 	<script type="text/javascript" src="lib/docman/view/Content.js"></script>
 	<!-- Docman Admin -->
-<?php if ($show_options === TRUE): ?>
-		<script type="text/javascript" src="lib/docman/admin/Router.js"></script>
-		<script type="text/javascript" src="lib/docman/admin/View.js"></script>
-		<script type="text/javascript" src="lib/docman/admin/ViewAdd.js"></script>
-		<script type="text/javascript" src="lib/docman/admin/ViewModifyDoc.js"></script>
-		<script type="text/javascript" src="lib/docman/admin/ViewSettings.js"></script>
-<?php endif; ?>
-	<script type="text/javascript">Docman.start();</script>
+	<?php if ($show_options === TRUE):
+	?>
+	<script type="text/javascript" src="lib/docman/admin/Router.js"></script>
+	<script type="text/javascript" src="lib/docman/admin/View.js"></script>
+	<script type="text/javascript" src="lib/docman/admin/ViewAdd.js"></script>
+	<script type="text/javascript" src="lib/docman/admin/ViewModifyDoc.js"></script>
+	<script type="text/javascript" src="lib/docman/admin/ViewSettings.js"></script>
+	<?php endif;?>
+	<script type="text/javascript">
+		Docman.start();
+
+	</script>
 </html>
