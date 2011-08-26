@@ -3,7 +3,7 @@
 	define('DS', DIRECTORY_SEPARATOR);
 
 	#check if pdo is installed
-	if (!function_exists("sqlite_open") || !(class_exists("PDO") && in_array("sqlite", PDO::getAvailableDrivers())))
+	if ( ! function_exists("sqlite_open") || ! (class_exists("PDO") && in_array("sqlite", PDO::getAvailableDrivers())))
 	{
 		die('SQL PDO Adapter is required.');
 	}

@@ -62,11 +62,11 @@
 	<script type="text/javascript" src="lib/docman/router/App.js"></script>
 	<script type="text/javascript" src="lib/docman/router/Doc.js"></script>
 	<script type="text/javascript" src="lib/docman/router/Search.js"></script>
-	<script type="text/javascript" src="lib/docman/model/Docs.js"></script>
-	<script type="text/javascript" src="lib/docman/model/Menus.js"></script>
 	<script type="text/javascript" src="lib/docman/view/SearchForm.js"></script>
 	<script type="text/javascript" src="lib/docman/view/Sidebar.js"></script>
 	<script type="text/javascript" src="lib/docman/view/Content.js"></script>
+	<script type="text/javascript" src="lib/docman/model/Docs.js"></script>
+	<script type="text/javascript" src="lib/docman/model/Menus.js"></script>
 	<!-- Docman Admin -->
 	<?php if ($show_options === TRUE):
 	?>
